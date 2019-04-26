@@ -1,2 +1,3 @@
 # Automatic-Email-Sending-
-This is simple python script to send mail through gmail.com
+one is Static and the other one is Dynamic
+This is python script to send mail through gmail.com
