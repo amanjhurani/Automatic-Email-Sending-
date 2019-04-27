@@ -31,10 +31,11 @@ print("Welcome You to send email through this program")
 print("Please Enter your Email And Password : ")
 e_mail , serviceProvider = get_mail()
 password = input("Password : ")
+
 while True:
         try:
             smtpDomain = set_smtp_domain(serviceProvider)
-            connect: SMTP = smtplib.SMTP(smtpDomain,587)
+            connect = smtplib.SMTP(smtpDomain,587)
             connect.ehlo()
             connect.starttls()
             connect.login(e_mail,password)
@@ -62,12 +63,11 @@ while True:
             print("Login Successful")
             break
 
-
 print("Please Type Receiver's Email Address : ")
 receiverAddress , receiverSP = get_mail()
 print("Now please type Subject And Message")
 Subject = input("Subject : ")
 Message = input("Message : ")
-connect.sendmail(e_mail, receiverAddress, ("Subject : ",str(Subject),"\n\n",str(Message)))
+connect.sendmail(e_mail, receiverAddress,Subject,"\n\n",Message)
 print("Email Send Successfully")
 connect.quit()
