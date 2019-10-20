@@ -17,7 +17,7 @@ def get_mail():
                 print("We do not provide", sp , " service")
                 continue
         else:
-            print("Invali mail ID")
+            print("Invalid mail ID")
             continue
 
 def set_smtp_domain(serviseprovider):
