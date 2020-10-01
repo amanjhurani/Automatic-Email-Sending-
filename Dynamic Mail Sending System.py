@@ -62,12 +62,13 @@ while True:
         else:
             print("Login Successful")
             break
-
-print("Please Type Receiver's Email Address : ")
-receiverAddress , receiverSP = get_mail()
-print("Now please type Subject And Message")
-Subject = input("Subject : ")
-Message = input("Message : ")
-connect.sendmail(e_mail, receiverAddress,Subject,"\n\n",Message)
-print("Email Send Successfully")
-connect.quit()
+            
+if __name__ == "__main__":
+    print("Please Type Receiver's Email Address : ")
+    receiverAddress , receiverSP = get_mail()
+    print("Now please type Subject And Message")
+    Subject = input("Subject : ")
+    Message = input("Message : ")
+    connect.sendmail(e_mail, receiverAddress,Subject,"\n\n",Message)
+    print("Email Send Successfully")
+    connect.quit()
