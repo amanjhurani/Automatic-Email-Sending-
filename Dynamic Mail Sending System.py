@@ -5,7 +5,7 @@ from smtplib import SMTP
 def get_mail():
     Services = ['hotmail','gmail','yahoo','outlook']
     while True:
-        mail_id = input("Enter Email : ")
+        mail_id = input("Enter Your E-mail Id : ")
         if '@' in mail_id and '.com' in mail_id:
             symbol_pos = mail_id.find("@")
             dotcom_pos = mail_id.find(".com")
@@ -14,10 +14,10 @@ def get_mail():
                 return mail_id , sp
                 break
             else:
-                print("We do not provide", sp , " service")
+                print("We Don't provide : ", sp , " service")
                 continue
         else:
-            print("Invali mail ID")
+            print("Invalid E-mail Id")
             continue
 
 def set_smtp_domain(serviseprovider):
@@ -28,9 +28,9 @@ def set_smtp_domain(serviseprovider):
     elif serviseprovider == 'yahoo':
         return 'smtp-mail.yahoo.com'
 print("Welcome You to send email through this program")
-print("Please Enter your Email And Password : ")
+print("Please provide Your Password and E-mail Id : ")
 e_mail , serviceProvider = get_mail()
-password = input("Password : ")
+password = input("Your Password : ")
 
 while True:
         try:
@@ -49,25 +49,26 @@ while True:
                 if ans == "yes":
                     webbrowser.open("https://myaccount.google.com/lesssecureapps")
                 else:
-                    print("We can't open webpage without your permission you can go to https://myaccount.google.com/lesssecureapps")
+                    #failure part
+                    print("We can't open webpage without your Grant you can refer here https://myaccount.google.com/lesssecureapps")
                     print("Please retype your password also :")
                     e_mail , serviceProvider = get_mail()
-                    password = input("Password : ")
+                    password = input("The Password is : ")
                     continue
             else:
-                print("Please retype your password also :")
+                print("Please Re-type your Correct Password :")
                 e_mail, serviceProvider = get_mail()
                 password = input("Password : ")
                 continue
         else:
-            print("Login Successful")
+            print("Login was Successful")
             break
 
-print("Please Type Receiver's Email Address : ")
+print("Please Provide the Receiver's Email Address too : ")
 receiverAddress , receiverSP = get_mail()
-print("Now please type Subject And Message")
-Subject = input("Subject : ")
-Message = input("Message : ")
+print("Now please Write about the Subject And Message")
+Subject = input("Subject is: ")
+Message = input("Message is : ")
 connect.sendmail(e_mail, receiverAddress,Subject,"\n\n",Message)
-print("Email Send Successfully")
+print("Email Was sent Successfully! ")
 connect.quit()
