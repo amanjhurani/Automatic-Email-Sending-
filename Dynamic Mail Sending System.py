@@ -77,3 +77,16 @@ Message = input("Message : ")
 connect.sendmail(e_mail, receiverAddress,Subject,"\n\n",Message)
 print("Email Send Successfully")
 connect.quit()
+
+def set_smtp_domain(serviseprovider):
+    if serviseprovider == 'gmail':
+        return 'smtp.gmail.com'
+    elif serviseprovider == 'outlook' or serviseprovider == 'hotmail':
+        return 'smtp-mail.outlook.com'
+    elif serviseprovider == 'yahoo':
+        return 'smtp-mail.yahoo.com'
+print("Welcome You to send email through this program")
+print("Please Enter your Email And Password : ")
+e_mail , serviceProvider = get_mail()
+password = input("Password : ")
+
