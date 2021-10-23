@@ -48,6 +48,12 @@ while True:
                 ans = input("yes or no? : " )
                 if ans == "yes":
                     webbrowser.open("https://myaccount.google.com/lesssecureapps")
+                elif True:
+                    print("We can't open webpage without your permission you can go to https://myaccount.google.com/lesssecureapps")
+                    print("Please retype your password also :")
+                    e_mail , serviceProvider = get_mail()
+                    password = input("Password : ")
+                    continue
                 else:
                     print("We can't open webpage without your permission you can go to https://myaccount.google.com/lesssecureapps")
                     print("Please retype your password also :")
